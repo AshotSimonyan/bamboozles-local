@@ -8,7 +8,7 @@ const Footer = () => {
         <ul className="social">
           <li>
             <a target="_blank" href="#" rel="noreferrer" className="social-btn">
-              <Icon name="twitter" />
+              <Icon name="twitter" size={24} />
             </a>
           </li>
           <li>

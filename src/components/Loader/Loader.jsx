@@ -31,7 +31,7 @@ const Loader = ({ className }) => {
       <div className="content">
         <h2>{count}%</h2>
         <div className="progress">
-          <div className="progress-inner" style={{ width: `${count}%` }} />
+          <div className={`progress-inner ${count > 5 ? 'box-shadow' : ''}`} style={{ width: `${count}%` }} />
         </div>
       </div>
     </LoaderStyle>

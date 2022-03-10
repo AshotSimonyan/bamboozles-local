@@ -47,7 +47,15 @@ const FAQ = forwardRef((props, ref) => {
       <div className="container">
         <div className="faq-content">
           <div className="left">
-            <h1 className="title">Your questions, answered.</h1>
+            <Fade
+              triggerOnce
+              direction={"up"}
+              fraction={0.8}
+              duration={1000}
+              delay={0}
+            >
+              <h1 className="title">Your questions, answered.</h1>
+            </Fade>
           </div>
           <div className="right">
             {data.map((q, i) => {

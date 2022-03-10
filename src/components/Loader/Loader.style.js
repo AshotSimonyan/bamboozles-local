@@ -37,11 +37,18 @@ export const LoaderStyle = styled.div`
       border-radius: 50px;
       height: 100%;
       transition: .3s;
+      
+      &.box-shadow {
+        box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.black};
+      }
     }
   }
 }
 
 
-@media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
-  
+@media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+  .progress {
+    width: 280px;
+    height: 16px;
+  }
 `

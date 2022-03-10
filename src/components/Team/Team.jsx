@@ -6,37 +6,21 @@ import { Icon } from "../UIKit"
 const teamList = [
   {
     position: "Artist",
-    name: "Onix Animations",
-    img: {
-      png: "/assets/team/1.png",
-      webp: "/assets/team/1.webp",
-    },
+    name: "Onix Animations"
   },
   {
-    position: "Business & Project Lead:",
-    name: "MetaGoat",
-    img: {
-      png: "/assets/team/2.png",
-      webp: "/assets/team/2.webp",
-    },
+    position: "Business & Project Lead",
+    name: "MetaGoat"
   },
   {
-    position: "Marketing & Promotions:",
-    name: "MetaGoat Tech",
-    img: {
-      png: "/assets/team/4.png",
-      webp: "/assets/team/4.webp",
-    },
+    position: "Marketing & Promotions",
+    name: "MetaGoat Tech"
   },
   {
-    position: "Software Development:",
+    position: "Software Development",
     name: "NFT stack",
-    url: "https://www.nftstack.info/",
-    img: {
-      png: "/assets/team/3.png",
-      webp: "/assets/team/3.webp",
-    },
-  },
+    url: "https://www.nftstack.info/"
+  }
 ]
 
 const Team = forwardRef((props, ref) => {
@@ -44,7 +28,6 @@ const Team = forwardRef((props, ref) => {
     <TeamStyle ref={ref}>
       <div className="container">
         <div className="content">
-          <h1 className="title">Team</h1>
           <Fade
             triggerOnce
             direction={"up"}
@@ -52,8 +35,16 @@ const Team = forwardRef((props, ref) => {
             duration={1000}
             delay={0}
           >
+            <h1 className="title">Team</h1>
+          </Fade>
+          <Fade
+            triggerOnce
+            direction={"up"}
+            fraction={0.8}
+            duration={1000}
+          >
             <ul className="team-list">
-              {teamList.map(({ name, position, img, url }) => {
+              {teamList.map(({ name, position, url }) => {
                 return (
                   <li className="team-card" key={name}>
                     <div className="img-wrapper">

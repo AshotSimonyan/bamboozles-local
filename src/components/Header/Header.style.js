@@ -112,6 +112,7 @@ export const HeaderStyle = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     transition: 0.5s;
 
     .icon {
@@ -207,7 +208,6 @@ export const HeaderStyle = styled.header`
 
       .header-nav-list {
         > li {
-          //padding-bottom: 24px;
           font-size: ${({ theme }) => theme.titleSizes.h3};
 
           &:not(:first-child) {
@@ -216,18 +216,6 @@ export const HeaderStyle = styled.header`
         }
       }
     }
-
-    .social-desktop {
-      display: none;
-    }
-
-    .social-mobile {
-      display: block;
-      padding: 16px;
-
-      .social {
-        justify-content: center;
-      }
-    }
+   
   }
 `

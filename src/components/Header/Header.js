@@ -51,28 +51,9 @@ const Header = ({ onLinkClick }) => {
                   )
                 })}
               </ul>
-              <div className="social-mobile">
-                <ul className="social">
-                  <li>
-                    <a
-                      target="_blank"
-                      href="#"
-                      rel="noreferrer"
-                      className="social-btn"
-                    >
-                      <Icon name="twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <Button target="_blank" rel="noreferrer" href="#">
-                      JOIN OUR DISCORD
-                    </Button>
-                  </li>
-                </ul>
-              </div>
             </div>
           </nav>
-          <ul className="social social-desktop">
+          <ul className="social">
             <li>
               <a
                 target="_blank"
@@ -80,15 +61,24 @@ const Header = ({ onLinkClick }) => {
                 rel="noreferrer"
                 className="social-btn"
               >
-                <Icon name="twitter" />
+                <Icon name="twitter" size={24} />
               </a>
             </li>
             <li>
+              <a
+                target="_blank"
+                href="#"
+                rel="noreferrer"
+                className="social-btn show-md"
+              >
+                <Icon name="discord" size={24} />
+              </a>
               <Button
                 target="_blank"
                 rel="noreferrer"
                 href="#"
                 variant="outlined"
+                className='hide-md'
               >
                 JOIN OUR DISCORD
               </Button>

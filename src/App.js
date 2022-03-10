@@ -52,6 +52,7 @@ function App() {
     setScrollTo(to)
   }
 
+
   return (
     <main>
       <Loader className={loading ? "" : "hide-loader"} />

@@ -171,7 +171,10 @@ export const GlobalStyle = createGlobalStyle`
     animation: ${fadeIn} .8s ease forwards;
   }
 
-
+  .show-md {
+    display: none !important;
+  }
+  
   iframe {
     pointer-events: none; /*for development*/
   }
@@ -190,6 +193,14 @@ export const GlobalStyle = createGlobalStyle`
   }
   
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    .hide-md {
+      display: none !important;
+    }
+    .show-md {
+      display: block !important;
+    }
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     h1, .h1 {
       font-size: ${({ theme }) => theme.titleSizesXS.h1};

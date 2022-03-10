@@ -11,7 +11,7 @@ export const AboutStyle = styled.section`
   }
 
   .title {
-    padding-bottom: 32px;
+    padding-bottom: 48px;
     text-align: center;
   }
 
