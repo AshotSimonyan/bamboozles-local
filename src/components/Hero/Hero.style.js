@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components"
 
 export const HeroStyle = styled.section`
-  padding: 120px 0 160px;
+  padding: 160px 0 200px;
   background: linear-gradient(
     0deg,
     ${({ theme }) => theme.colors.white} 50%,
