@@ -1,17 +1,19 @@
 import styled from "styled-components"
 
+
+
 export const HeaderStyle = styled.header`
-  background-color: ${({ theme }) => theme.colors.primary};
-  height: 80px;
-  position: fixed;
+  height: 72px;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99;
+  transition:  0.3s;
+  margin-top: -160px;
 
-  &.sticky {
-    transition: box-shadow 0.3s;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+  &.fixed {
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 
   .container,
@@ -150,13 +152,13 @@ export const HeaderStyle = styled.header`
 
     &.open {
       .header-nav {
-        height: calc(100% - 80px);
+        height: calc(100% - 72px);
       }
     }
 
     .header-nav {
       position: fixed;
-      top: 80px;
+      top: 72px;
       right: 0;
       bottom: 0;
       left: 0;
@@ -170,7 +172,7 @@ export const HeaderStyle = styled.header`
         flex-direction: column;
         align-items: inherit;
         justify-content: space-between;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 72px);
         padding-top: 120px;
         background-color: ${({ theme }) => theme.colors.primary};
       }

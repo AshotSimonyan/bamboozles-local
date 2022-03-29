@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react"
+import { forwardRef, useEffect, useState } from "react"
 import { HeaderStyle } from "./Header.style"
-import Logo from "../../assets/logo.svg"
 import { Button, Icon } from "../UIKit"
 import { useLockedBody } from "../../hooks/useLockedBody"
 import { navList } from "./config"
 
-const Header = ({ onLinkClick }) => {
+const Header = forwardRef(({fixedHeader, onLinkClick}, ref) => {
   const [drawerOpened, setDrawerOpened] = useState(false)
   const [locked, setLocked] = useLockedBody()
 
@@ -31,7 +30,9 @@ const Header = ({ onLinkClick }) => {
     onLinkClick(to)
   }
   return (
-    <HeaderStyle className={drawerOpened ? "open" : ""}>
+
+
+    <HeaderStyle ref={ref} className={`${drawerOpened ? "open" : ""} ${fixedHeader ? 'fixed' : ''}`}>
       <div className="container">
         <div className="header-content">
           <div className="logo-wrapper">
@@ -78,7 +79,7 @@ const Header = ({ onLinkClick }) => {
                 rel="noreferrer"
                 href="#"
                 variant="outlined"
-                className='hide-md'
+                className="hide-md"
               >
                 JOIN OUR DISCORD
               </Button>
@@ -94,7 +95,8 @@ const Header = ({ onLinkClick }) => {
         </div>
       </div>
     </HeaderStyle>
+
   )
-}
+})
 
 export default Header

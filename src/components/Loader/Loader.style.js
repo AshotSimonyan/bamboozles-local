@@ -25,30 +25,40 @@ export const LoaderStyle = styled.div`
     text-align: center;
   }
   .progress {
-    width: 420px;
-    height: 24px;
-    margin-top: 8px;
-    border-radius: 50px;
-    border: 3px solid ${({ theme }) => theme.colors.black};
-    background-color: ${({ theme }) => theme.colors.white};
+    width: 512px;
+    transition: .3s;
     
-    .progress-inner {
-      background-color: ${({ theme }) => theme.colors.black};
-      border-radius: 50px;
-      height: 100%;
-      transition: .3s;
-      
-      &.box-shadow {
-        box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.black};
-      }
+    img {
+      width: 100%;
     }
+    // height: 24px;
+    // margin-top: 8px;
+    // border-radius: 50px;
+    // border: 3px solid ${({ theme }) => theme.colors.black};
+    // background-color: ${({ theme }) => theme.colors.white};
+    
+    // .progress-inner {
+    //   background-color: ${({ theme }) => theme.colors.black};
+    //   border-radius: 50px;
+    //   height: 100%;
+    //   transition: .3s;
+    //  
+    //   &.box-shadow {
+    //     box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.black};
+    //   }
+    // }
   }
 }
+
+
+@media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
+  .progress {
+    width: 420px;
+  }
 
 
 @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
   .progress {
     width: 280px;
-    height: 16px;
   }
 `

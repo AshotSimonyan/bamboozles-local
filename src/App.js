@@ -8,21 +8,21 @@ import { useLockedBody } from "./hooks/useLockedBody"
 import FAQ from "./components/FAQ/FAQ"
 import Roadmap from "./components/Roadmap/Roadmap"
 import Team from "./components/Team/Team"
+import Banner from "./components/Banner/Banner"
 
 function App() {
   const [loading, setLoading] = useState(true)
   const [, setLocked] = useLockedBody(true)
   const [scrollTo, setScrollTo] = useState(null)
+  const [fixedHeader, setFixedHeader] = useState(false)
+  const bannerRef = useRef(null)
+  const headerRef = useRef(null)
   const heroRef = useRef(null)
   const roadmapRef = useRef(null)
   const faqRef = useRef(null)
   const aboutRef = useRef(null)
   const contactRef = useRef(null)
   const teamRef = useRef(null)
-
-  useEffect(() => {
-    window.history.scrollRestoration = "manual"
-  }, [])
 
   const refMapping = {
     "#roadmap": roadmapRef,
@@ -33,10 +33,27 @@ function App() {
   }
 
   useEffect(() => {
+    window.history.scrollRestoration = "manual"
+  }, [])
+
+
+
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false)
       setLocked(false)
     }, 3800)
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const bannerHeight = bannerRef?.current.clientHeight
+      const headerHeight = headerRef?.current.clientHeight
+      if(window.pageYOffset >= bannerHeight - headerHeight) {
+        return setFixedHeader(true)
+      }
+      setFixedHeader(false)
+    })
   }, [])
 
   useEffect(() => {
@@ -56,7 +73,8 @@ function App() {
   return (
     <main>
       <Loader className={loading ? "" : "hide-loader"} />
-      <Header onLinkClick={handleLinkClick} />
+      <Banner ref={bannerRef} />
+      <Header ref={headerRef} fixedHeader={fixedHeader} onLinkClick={handleLinkClick} />
       <div className="main-wrapper">
         <Hero ref={heroRef} />
         <About ref={aboutRef} />

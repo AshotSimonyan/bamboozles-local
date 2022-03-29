@@ -1,12 +1,9 @@
 import styled, { keyframes } from "styled-components"
 
 export const HeroStyle = styled.section`
-  padding: 160px 0 200px;
-  background: linear-gradient(
-    0deg,
-    ${({ theme }) => theme.colors.white} 50%,
-    ${({ theme }) => theme.colors.primary} 50%
-  );
+  padding-bottom: 100px;
+  padding-top: 16px;
+
 
   .content {
     display: flex;
@@ -39,7 +36,7 @@ export const HeroStyle = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
-    padding: 80px 0;
+    padding-bottom: 0;
 
     .content {
       padding: 32px;
@@ -47,7 +44,7 @@ export const HeroStyle = styled.section`
     }
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding: 60px 0;
+    //padding: 60px 0;
     .content {
       flex-direction: column;
       border-radius: 24px;

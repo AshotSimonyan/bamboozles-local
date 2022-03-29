@@ -122,7 +122,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .main-wrapper {
-    padding-top: 64px;
+    padding-top: 72px;
   }
 
   /*typography*/
