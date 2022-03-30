@@ -36,8 +36,6 @@ function App() {
     window.history.scrollRestoration = "manual"
   }, [])
 
-
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
@@ -49,7 +47,7 @@ function App() {
     window.addEventListener("scroll", () => {
       const bannerHeight = bannerRef?.current.clientHeight
       const headerHeight = headerRef?.current.clientHeight
-      if(window.pageYOffset >= bannerHeight - headerHeight) {
+      if (window.pageYOffset >= bannerHeight - headerHeight) {
         return setFixedHeader(true)
       }
       setFixedHeader(false)
@@ -69,12 +67,15 @@ function App() {
     setScrollTo(to)
   }
 
-
   return (
     <main>
       <Loader className={loading ? "" : "hide-loader"} />
       <Banner ref={bannerRef} />
-      <Header ref={headerRef} fixedHeader={fixedHeader} onLinkClick={handleLinkClick} />
+      <Header
+        ref={headerRef}
+        fixedHeader={fixedHeader}
+        onLinkClick={handleLinkClick}
+      />
       <div className="main-wrapper">
         <Hero ref={heroRef} />
         <About ref={aboutRef} />

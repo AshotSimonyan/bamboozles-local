@@ -4,7 +4,6 @@ export const HeroStyle = styled.section`
   padding-bottom: 100px;
   padding-top: 16px;
 
-
   .content {
     display: flex;
     justify-content: space-between;

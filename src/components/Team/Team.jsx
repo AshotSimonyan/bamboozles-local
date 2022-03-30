@@ -6,21 +6,21 @@ import { Icon } from "../UIKit"
 const teamList = [
   {
     position: "Artist",
-    name: "Onix Animations"
+    name: "Onix Animations",
   },
   {
     position: "Business & Project Lead",
-    name: "MetaGoat"
+    name: "MetaGoat",
   },
   {
     position: "Marketing & Promotions",
-    name: "MetaGoat Tech"
+    name: "MetaGoat Tech",
   },
   {
     position: "Software Development",
     name: "NFT stack",
-    url: "https://www.nftstack.info/"
-  }
+    url: "https://www.nftstack.info/",
+  },
 ]
 
 const Team = forwardRef((props, ref) => {
@@ -37,12 +37,7 @@ const Team = forwardRef((props, ref) => {
           >
             <h1 className="title">Team</h1>
           </Fade>
-          <Fade
-            triggerOnce
-            direction={"up"}
-            fraction={0.8}
-            duration={1000}
-          >
+          <Fade triggerOnce direction={"up"} fraction={0.8} duration={1000}>
             <ul className="team-list">
               {teamList.map(({ name, position, url }) => {
                 return (

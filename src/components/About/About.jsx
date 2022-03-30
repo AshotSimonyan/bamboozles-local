@@ -11,20 +11,19 @@ const HaveIdea = forwardRef((props, ref) => {
   const aboutScreen = useOnScreen(aboutRef)
 
   useEffect(() => {
-    if(aboutScreen) {
+    if (aboutScreen) {
       setOnScreen(true)
     }
   }, [aboutScreen])
-
 
   console.log(onScreen)
   return (
     <AboutStyle ref={ref}>
       <div className="container">
         <div className="content">
-            <div className={`animated ${onScreen ? 'fade-in' : ''}`}>
-              <h1 className="title">About</h1>
-            </div>
+          <div className={`animated ${onScreen ? "fade-in" : ""}`}>
+            <h1 className="title">About</h1>
+          </div>
           <Fade
             triggerOnce
             cascade
@@ -33,7 +32,7 @@ const HaveIdea = forwardRef((props, ref) => {
             delay={800}
             duration={800}
           >
-            <p className="text" >
+            <p className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque eu nisi id neque volutpat maximus eget egestas quam.
               Nullam placerat nunc elit, non aliquam velit feugiat sed.
@@ -45,7 +44,7 @@ const HaveIdea = forwardRef((props, ref) => {
             </p>
           </Fade>
 
-          <div ref={aboutRef}/>
+          <div ref={aboutRef} />
         </div>
       </div>
       <AboutCarousel />

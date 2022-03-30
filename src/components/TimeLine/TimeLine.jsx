@@ -1,73 +1,56 @@
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { TimelineStyle } from "./TimeLine.style"
 import { timeLineContent } from "./timeLineContent"
+import {Fade} from "react-awesome-reveal";
 
-const Timeline = ({ setObserver, callback }) => {
-  const [message, setMessage] = useState({
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-    6: false,
-  })
+const Timeline = () => {
 
-  const timeline = {
-    1: useRef(null),
-    2: useRef(null),
-    3: useRef(null),
-    4: useRef(null),
-    5: useRef(null),
-    6: useRef(null),
-  }
+    const [percent, setPercent] = useState(0)
+    const treeRef = useRef(null)
 
-  const someCallback = number => {
-    setMessage(prevState => ({
-      ...prevState,
-      [number]: true,
-    }))
-  }
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            const treeHeight = treeRef?.current.clientHeight
+            const treePosition = treeRef?.current.getBoundingClientRect().top
+            const pageY = window.scrollY
+            const screen = window.screen.height
+            if (pageY - screen > treePosition + (screen)) {
 
-  useEffect(() => {
-    setObserver(timeline["1"].current, () => someCallback(1))
-    setObserver(timeline["2"].current, () => someCallback(2))
-    setObserver(timeline["3"].current, () => someCallback(3))
-    setObserver(timeline["4"].current, () => someCallback(4))
-    setObserver(timeline["5"].current, () => someCallback(5))
-    setObserver(timeline["6"].current, () => someCallback(6))
-  }, [])
+                const treeHeightPercent = Math.round(
+                    ((pageY - treeHeight - screen ) / treeHeight) * 100
+                )
+                if (treeHeightPercent >= 100) {
+                    return setPercent(100)
+                }
+                if (treeHeightPercent <= 0) {
+                    return setPercent(0)
+                }
+                setPercent(treeHeightPercent)
+            }
+        })
+    }, [])
+
+    console.log(percent)
 
   return (
     <TimelineStyle>
+        <div className="timeline-tree" ref={treeRef}>
+            <img src="/assets/roadmap/timeline-tree.png" alt="" />
+            <span className='overlay'  style={{ clipPath: `inset(${percent}% 0 0 0)` }}/>
+        </div>
       {timeLineContent.map(({ title, text }, index) => {
         const number = index + 1
         const even = number % 2 === 0
         return (
-          <>
-            <div
-              id={`timeline${number}`}
-              ref={timeline[number]}
-              className={`timeline timeline${number}`}
-            />
-            <div className="message-wrapper">
-              <div
-                className={`message ${even ? "left" : "right"} ${
-                  message[number] ? "fade-in" : ""
-                }`}
-              >
+
+            <div key={number} className={`message message-${number} ${even ? "left" : "right"}`}>
+                <img className='card-img' src={`assets/roadmap/${number}.png`} alt=""/>
                 <h2 className="circle-number">{number}</h2>
                 <h2 className="message-title">{title}</h2>
                 <p>{text}</p>
-              </div>
             </div>
-          </>
         )
       })}
-      <div
-        id={`timeline6`}
-        ref={timeline["6"]}
-        className={`timeline timeline6`}
-      />
     </TimelineStyle>
   )
 }

@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components"
 
-
 const moveclouds = keyframes`
   0% {
     top: 80%;
@@ -26,14 +25,14 @@ export const BannerStyle = styled.section`
   justify-content: center;
   position: relative;
   overflow: hidden;
-  
+
   .logo-wrapper {
     padding-top: 140px;
     max-width: 560px;
     width: 100%;
     position: relative;
     z-index: 1;
-    
+
     img {
       width: 100%;
     }
@@ -45,32 +44,38 @@ export const BannerStyle = styled.section`
 
   .x1 {
     left: 85%;
-    animation: ${moveclouds} 10s linear infinite, ${sideWays} 4s ease-in-out infinite alternate;
+    animation: ${moveclouds} 10s linear infinite,
+      ${sideWays} 4s ease-in-out infinite alternate;
   }
 
   .x2 {
     left: 15%;
-    animation: ${moveclouds} 21s linear infinite, ${sideWays} 5s ease-in-out infinite alternate;
+    animation: ${moveclouds} 21s linear infinite,
+      ${sideWays} 5s ease-in-out infinite alternate;
   }
 
   .x3 {
     left: 40%;
-    animation: ${moveclouds} 30s linear infinite, ${sideWays} 3s ease-in-out infinite alternate;
+    animation: ${moveclouds} 30s linear infinite,
+      ${sideWays} 3s ease-in-out infinite alternate;
   }
 
   .x4 {
     left: 50%;
-    animation: ${moveclouds} 23s linear infinite, ${sideWays} 4s ease-in-out infinite alternate;
+    animation: ${moveclouds} 23s linear infinite,
+      ${sideWays} 4s ease-in-out infinite alternate;
   }
-  
+
   .x5 {
     left: 5%;
-    animation: ${moveclouds} 14s linear infinite, ${sideWays} 4s ease-in-out infinite alternate;
+    animation: ${moveclouds} 14s linear infinite,
+      ${sideWays} 4s ease-in-out infinite alternate;
   }
-  
+
   .x6 {
     left: 65%;
-    animation: ${moveclouds} 19s linear infinite, ${sideWays} 3s ease-in-out infinite alternate;
+    animation: ${moveclouds} 19s linear infinite,
+      ${sideWays} 3s ease-in-out infinite alternate;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {

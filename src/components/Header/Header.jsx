@@ -4,7 +4,7 @@ import { Button, Icon } from "../UIKit"
 import { useLockedBody } from "../../hooks/useLockedBody"
 import { navList } from "./config"
 
-const Header = forwardRef(({fixedHeader, onLinkClick}, ref) => {
+const Header = forwardRef(({ fixedHeader, onLinkClick }, ref) => {
   const [drawerOpened, setDrawerOpened] = useState(false)
   const [locked, setLocked] = useLockedBody()
 
@@ -30,9 +30,10 @@ const Header = forwardRef(({fixedHeader, onLinkClick}, ref) => {
     onLinkClick(to)
   }
   return (
-
-
-    <HeaderStyle ref={ref} className={`${drawerOpened ? "open" : ""} ${fixedHeader ? 'fixed' : ''}`}>
+    <HeaderStyle
+      ref={ref}
+      className={`${drawerOpened ? "open" : ""} ${fixedHeader ? "fixed" : ""}`}
+    >
       <div className="container">
         <div className="header-content">
           <div className="logo-wrapper">
@@ -95,7 +96,6 @@ const Header = forwardRef(({fixedHeader, onLinkClick}, ref) => {
         </div>
       </div>
     </HeaderStyle>
-
   )
 })
 

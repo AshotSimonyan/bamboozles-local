@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-
-
 export const HeaderStyle = styled.header`
   height: 72px;
   position: sticky;
@@ -9,7 +7,7 @@ export const HeaderStyle = styled.header`
   left: 0;
   right: 0;
   z-index: 99;
-  transition:  0.3s;
+  transition: 0.3s;
   margin-top: -160px;
 
   &.fixed {
@@ -218,6 +216,5 @@ export const HeaderStyle = styled.header`
         }
       }
     }
-   
   }
 `

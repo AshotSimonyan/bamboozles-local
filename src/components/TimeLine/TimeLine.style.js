@@ -4,30 +4,25 @@ export const TimelineStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
+  padding-top: 114px;
+  position: relative;
 
-  .timeline {
-    height: 290px;
-    width: 24px;
-    border-left: 3px solid ${({ theme }) => theme.colors.black};
-    border-right: 3px solid ${({ theme }) => theme.colors.black};
 
-    &.timeline1 {
-      height: 100px;
-      border-top: 3px solid ${({ theme }) => theme.colors.black};
-      border-radius: 50px 50px 0 0;
-    }
-
-    &.timeline6 {
-      border-radius: 0 0 50px 50px;
-      border-bottom: 3px solid ${({ theme }) => theme.colors.black};
-      height: 160px;
-    }
-  }
-
-  .message-wrapper {
+  .timeline-tree {
     position: relative;
+    
+    .overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: ${({theme}) => theme.colors.secondary};
+      transition: .2s;
+    }
   }
+
 
   .circle-number {
     height: 60px;
@@ -43,23 +38,69 @@ export const TimelineStyle = styled.div`
 
   .message {
     position: absolute;
-    top: 20%;
     min-width: 450px;
     font-weight: bold;
-    opacity: 0;
     padding: 32px;
     background-color: ${({ theme }) => theme.colors.white};
     border: 3px solid ${({ theme }) => theme.colors.black};
     border-radius: 20px;
+    
+    .card-img {
+      position: absolute;
+      height: 260px;
+      top: 0;
+    }
+    
 
     &.left {
-      margin-left: 64px;
+      margin-left: 68px;
       left: 50%;
     }
 
     &.right {
-      margin-right: 64px;
+      margin-right: 68px;
       right: 50%;
+    }
+    
+    &-1 {
+      top: 10%;
+
+      .card-img {
+        transform: translateY(-70%);
+        left: 20px;
+      }
+    }
+    
+    &-2 {
+      top: 30%;
+      .card-img {
+        transform: translateY(-70%);
+        right: 20px;
+      }
+    }
+    
+    &-3 {
+      top: 50%;
+      .card-img {
+        transform: translateY(-70%);
+        right: 20px;
+      }
+    }
+    
+    &-4 {
+      top: 70%;
+      .card-img {
+        transform: translateY(-80%);
+        left: 20px;
+      }
+    }
+    
+    &-5 {
+      top: 90%;
+      .card-img {
+        transform: translateY(-68%);
+        right: 20px;
+      }
     }
 
     h2 {
@@ -77,11 +118,11 @@ export const TimelineStyle = styled.div`
       min-width: 400px;
 
       &.left {
-        margin-left: 32px;
+        //margin-left: 32px;
       }
 
       &.right {
-        margin-right: 32px;
+        //margin-right: 32px;
       }
     }
   }
@@ -95,13 +136,11 @@ export const TimelineStyle = styled.div`
       top: 0;
 
       &.left {
-        margin-left: 32px;
         left: 0;
       }
 
       &.right {
         margin-right: 0;
-        margin-left: 32px;
         left: 0;
         right: initial;
         text-align: left;

@@ -30,7 +30,10 @@ const Loader = ({ className }) => {
   return (
     <LoaderStyle className={className}>
       <div className="content">
-        <div className='progress' style={{ clipPath: `inset(0 ${count}% 0 0)` }}>
+        <div
+          className="progress"
+          style={{ clipPath: `inset(0 ${count}% 0 0)` }}
+        >
           <img src="/assets/preloader.png" alt="" />
         </div>
       </div>

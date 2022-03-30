@@ -13,6 +13,7 @@ export const RoadmapStyle = styled.div`
     }
   }
 
+
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
     padding: 120px 0 400px;
   }
