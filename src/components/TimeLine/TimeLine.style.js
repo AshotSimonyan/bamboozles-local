@@ -44,6 +44,7 @@ export const TimelineStyle = styled.div`
     background-color: ${({ theme }) => theme.colors.white};
     border: 3px solid ${({ theme }) => theme.colors.black};
     border-radius: 20px;
+    opacity: 0;
     
     .card-img {
       position: absolute;
@@ -117,6 +118,10 @@ export const TimelineStyle = styled.div`
     .message {
       min-width: 400px;
 
+      .card-img {
+        height: 220px;
+      }
+
       &.left {
         //margin-left: 32px;
       }
@@ -132,35 +137,32 @@ export const TimelineStyle = styled.div`
     padding-left: 8px;
 
     .message {
-      min-width: 480px;
-      top: 0;
-
-      &.left {
-        left: 0;
-      }
+      width: 70%;
+      min-width: inherit;
+      margin-left: auto !important;
+  
 
       &.right {
         margin-right: 0;
-        left: 0;
-        right: initial;
         text-align: left;
+      }
+      
+      .card-img {
+        display: none;
       }
     }
 
-    .timeline {
-      height: 330px;
-
-      &.timeline1 {
-        height: 10px;
-      }
+    .timeline-tree {
+      position: absolute;
+    }
+    .message {
+      position: static;
+      margin-bottom: 24px;
     }
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    .timeline {
-      width: 16px;
-      height: 400px;
-    }
+
     .message {
       min-width: 290px;
       padding: 24px;
@@ -173,9 +175,7 @@ export const TimelineStyle = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.xs}px) {
-    .timeline {
-      height: 420px;
-    }
+
     .message {
       min-width: 260px;
       padding: 16px;

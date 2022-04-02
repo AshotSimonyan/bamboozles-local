@@ -15,10 +15,10 @@ export const RoadmapStyle = styled.div`
 
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding: 120px 0 400px;
+    padding: 120px 0;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    padding: 80px 0 300px;
+    padding: 80px 0;
   }
 `
