@@ -6,6 +6,7 @@ export const TimelineStyle = styled.div`
   align-items: center;
   padding-top: 114px;
   position: relative;
+  overflow: hidden;
 
 
   .timeline-tree {
@@ -134,10 +135,9 @@ export const TimelineStyle = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
     align-items: flex-start;
-    padding-left: 8px;
 
     .message {
-      width: 70%;
+      width: 80%;
       min-width: inherit;
       margin-left: auto !important;
   
@@ -157,15 +157,28 @@ export const TimelineStyle = styled.div`
     }
     .message {
       position: static;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
   }
 
+  @media (max-width: 700px) {
+    .message {
+      padding: 20px;
+    }
+  }
+
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
 
     .message {
-      min-width: 290px;
-      padding: 24px;
+      min-width: 200px;
+      padding: 16px;
+      width: 75%;
+      margin-bottom: 16px;
+      
+      p {
+        padding-bottom: 0;
+      }
     }
 
     .circle-number {
@@ -173,12 +186,5 @@ export const TimelineStyle = styled.div`
       height: 48px;
     }
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}px) {
-
-    .message {
-      min-width: 260px;
-      padding: 16px;
-    }
-  }
+  
 `

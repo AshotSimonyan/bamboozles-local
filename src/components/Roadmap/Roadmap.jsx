@@ -1,16 +1,9 @@
-import React, { forwardRef, useEffect, useState } from "react"
-import { theme } from "../../styles/global/theme"
+import React, { forwardRef } from "react"
 import { RoadmapStyle } from "./Roadmap.style"
 import Timeline from "../TimeLine/TimeLine"
-// import Timeline from "../TimeLine/TimeLineCopy"
-import TimelineObserver from "react-timeline-animation"
-import { Title } from "../Animations"
 import { Fade } from "react-awesome-reveal"
 
 const Roadmap = forwardRef((props, ref) => {
-
-
-
 
   return (
     <RoadmapStyle ref={ref}>
