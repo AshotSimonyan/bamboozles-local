@@ -87,7 +87,7 @@ const Header = forwardRef(({ fixedHeader, onLinkClick }, ref) => {
             </li>
           </ul>
           <button
-            className="hamburger"
+            className={`hamburger ${fixedHeader ? '' : 'hide-burger'}`}
             type="button"
             onClick={handleDrawerToggle}
           >

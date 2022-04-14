@@ -95,12 +95,11 @@ export const BannerStyle = styled.section`
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}px) {
-    height: 440px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    height: 400px;
 
     .logo-wrapper {
       padding-top: 80px;
-      max-width: 214px;
     }
   }
 `

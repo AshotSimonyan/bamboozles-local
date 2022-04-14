@@ -31,18 +31,53 @@ export const TeamStyle = styled.section`
   .position {
     font-size: ${({ theme }) => theme.fontSizes.sm};
   }
-  .team-list {
-    display: flex;
-    margin-left: -24px;
+  .slick-slide {
+    padding: 0 12px;
   }
   .team-card {
     width: 262px;
-    margin-left: 24px;
     padding: 16px;
     border: 3px solid ${({ theme }) => theme.colors.black};
     border-radius: 20px;
     background-color: ${({ theme }) => theme.colors.white};
   }
+  
+  .slick-slider {
+    position: relative;}
+}
+
+  .slick-next,
+  .slick-prev {
+    top: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid ${({theme}) => theme.colors.black};
+    background: ${({theme}) => theme.colors.white};
+    transition: width 0.3s;
+    transform: translateY(50%);
+    
+    &:before {
+      content: '';
+    }
+    
+    &:hover, &:focus {
+      background: ${({theme}) => theme.colors.white};
+    }
+  }
+
+.slick-next {
+  left: 52%;
+  right: inherit;
+}
+
+.slick-prev {
+  left: inherit;
+  right: 52%;
+}
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
     .title {
@@ -50,30 +85,12 @@ export const TeamStyle = styled.section`
     }
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.md}px) {
-    padding: 80px 0;
-    .team-list {
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-left: -16px;
-    }
-    .team-card {
-      width: calc((100% / 2) - 16px);
-      margin-left: 16px;
-      margin-bottom: 16px;
+    padding: 80px 0 120px;
 
+    .team-card {
       &:nth-child(even) {
         margin-top: 0;
       }
-    }
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    padding: 60px 0;
-    .team-list {
-      justify-content: flex-start;
-    }
-    .team-card {
-      width: 100%;
     }
   }
 `

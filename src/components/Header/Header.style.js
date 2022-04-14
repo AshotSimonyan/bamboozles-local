@@ -35,7 +35,7 @@ export const HeaderStyle = styled.header`
   }
 
   .logo {
-    max-width: 130px;
+    max-width: 144px;
     display: block;
 
     img {
@@ -146,6 +146,12 @@ export const HeaderStyle = styled.header`
       border-radius: 50%;
       border: 2px solid ${({ theme }) => theme.colors.black};
       background-color: ${({ theme }) => theme.colors.white};
+      transition: .3s;
+
+      &.hide-burger {
+        opacity: 0;
+        pointer-events: none;
+      }
     }
 
     &.open {
